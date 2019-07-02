@@ -4,7 +4,7 @@ Copyright (C) 2019 Thomas Honnell
 
 This program takes a .tvg file and converts it to ascii format and prints.
 
-####Build and Run
+#### Build and Run
 
 Compile the code by running the command
 
@@ -16,10 +16,10 @@ Then to run the program with the .tvg file you want run the command
 
 and replace the example file with your file.
 
-####Current version notes
+#### Current version notes
 
 Currently it seems to be fully functional. The default test works correctly and the other tests seem to also work correctly.
 
-####Licensing
+#### Licensing
 
 This program is licensed under the "GNU General Public License". Please see the file LICENSE in the source distribution of this software for license terms.
