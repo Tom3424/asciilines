@@ -36,10 +36,6 @@ main(int argc, char* argv[])
   if(len<4)
     exit(0);
   
-  //cannot get to work
-  //if(strcmp(filename[len-4],'.tvg')){
-  //exit(0);
-  //}
 
   //success
   fptr = fopen(filename, "r");
@@ -189,12 +185,12 @@ main(int argc, char* argv[])
     //not yes for used
     if(commands[i].u != 'y')
       break;
-    if(commands[i].ro>=0){
-      if(commands[i].l == 'h'){
-        for(int j=commands[i].co;j<commands[i].len && j<c;++j){
-	  graph[commands[i].ro][j] = commands[i].c;
-	}
+    //if(commands[i].ro>=0){
+    if(commands[i].l == 'h'){
+      for(int j=commands[i].co;j<commands[i].len && j<c;++j){
+        graph[commands[i].ro][j] = commands[i].c;
       }
+    }
       //not sure if this should work?
       /*
       else if(!strcmp(commands[i].l,"v")){
@@ -203,13 +199,13 @@ main(int argc, char* argv[])
         }
       }
       */
-      else{
-	printf("error problem1");
-	exit(0);
-      }
+      //else{
+      //printf("error problem1");
+      //exit(0);
+      //}
     
-    }
-    if(commands[i].co>=0){
+      //}
+      //if(commands[i].co>=0){
       /*
       if(!strcmp(commands[i].l,"h")){
         for(int j=0;j<commands[i].len;++j){
@@ -219,18 +215,18 @@ main(int argc, char* argv[])
       */
       //not sure if this should work?
       
-      if(commands[i].l == 'v'){
-        for(int j=commands[i].ro;j<commands[i].len && j<r;++j){
-          graph[j][commands[i].co] = commands[i].c;
-        }
+    else if(commands[i].l == 'v'){
+      for(int j=commands[i].ro;j<commands[i].len && j<r;++j){
+        graph[j][commands[i].co] = commands[i].c;
       }
-      
-      else{
-        printf("error problem2");
-        exit(0);
-      }
-
     }
+      
+    else{
+      printf("error problem2");
+      exit(0);
+    }
+
+      //}
 
   }
   //end of commands
