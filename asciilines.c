@@ -113,8 +113,8 @@ main(int argc, char* argv[])
     commands[index].tr = temp;
     commands[index].ro = commands[index].tr - '0';
     if(temp == '-'){
-      commands[index].co = -1;
       temp = fgetc(fptr);
+      commands[index].ro = (temp -'0')*-1;
     }
     temp = fgetc(fptr);
     while(temp == ' ' && temp!=EOF)
@@ -126,8 +126,8 @@ main(int argc, char* argv[])
     commands[index].tc = temp;
     commands[index].co = commands[index].tc - '0';
     if(temp == '-'){
-      commands[index].co = -1;
       temp = fgetc(fptr);
+      commands[index].co = (temp -'0')*-1;
     }
     temp = fgetc(fptr);
     while(temp == ' ' && temp!=EOF)
@@ -191,7 +191,7 @@ main(int argc, char* argv[])
       break;
     if(commands[i].ro>=0){
       if(commands[i].l == 'h'){
-        for(int j=0;j<commands[i].len && j<c;++j){
+        for(int j=commands[i].co;j<commands[i].len && j<c;++j){
 	  graph[commands[i].ro][j] = commands[i].c;
 	}
       }
@@ -220,7 +220,7 @@ main(int argc, char* argv[])
       //not sure if this should work?
       
       if(commands[i].l == 'v'){
-        for(int j=0;j<commands[i].len && j<r;++j){
+        for(int j=commands[i].ro;j<commands[i].len && j<r;++j){
           graph[j][commands[i].co] = commands[i].c;
         }
       }
