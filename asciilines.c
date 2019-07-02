@@ -80,8 +80,8 @@ main(int argc, char* argv[])
   char graph[15][15];
   //not sure how to do dynamically because of double list
   //init graph with blank dots
-  for(int i=0;i<r;++i){
-    for(int k=0;k<c;++k){
+  for(int i=0;i<row;++i){
+    for(int k=0;k<col;++k){
       graph[i][k] = '.';
     }
   }
